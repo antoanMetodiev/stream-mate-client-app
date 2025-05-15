@@ -1,0 +1,108 @@
+.details-container {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 1.9em;
+    padding-inline: 1em;
+    width: auto;
+    height: 50em;
+    opacity: 0; /* Започва с невидимост */
+    transform: translateY(30px); /* Започва малко под началната си позиция */
+    animation: slideIn 0.82s ease-out forwards; /* Добавяме анимацията */
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Започва отдолу */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Завършва на нормалното си място */
+    }
+}
+.poster-img {
+    margin-left: 1em;
+    width: 22em;
+    height: 30em;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.516); /* Лек бял ореол */
+}
+
+
+/* DATA CONTAINER: */
+
+.data-container {
+    width: 100%;
+    margin-top: 2px;
+    margin-left: -4px;
+    color: #fefefe;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.data-container .title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.1em;
+    font-weight: 500;
+    margin-top: -5px;
+    width: fit-content;
+}
+
+.data-container .special-text {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #949494;
+    font-size: 0.86em;
+    margin-left: 3px;
+    font-weight: 400;
+    margin-top: -7px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.data-container .overview-h4 {
+    font-size: 1.1em;
+    color: #FFFF;
+    font-weight: 400;
+}
+
+.data-container .description {
+    font-weight: 400;
+    padding-right: 2.9em;
+    letter-spacing: 1px;
+    line-height: 33px;
+}
+
+.data-container .genres {
+    margin: 0.5em 0em 0.5em 0em;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.data-container .release-date {
+    font-style: normal;
+    margin-top: 1.1em;
+    font-weight: 400;
+}
+
+.data-container .tmdb-rating {
+    font-style: normal;
+    font-weight: 400;
+} 
+
+.data-container .default-views {
+    font-style: normal;
+    font-weight: 400;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+.diff-color {
+    color: silver
+}

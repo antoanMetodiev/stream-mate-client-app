@@ -1,0 +1,72 @@
+.user-chat-finder-menu-container {
+    position: fixed;
+    z-index: 5;
+    bottom: 0.4em;
+    left: 0.8em;
+}
+
+.logoIcon-img {
+    width: 2.78em;
+    height: 2.78em;
+    margin-bottom: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    /* Плавен преход */
+    object-fit: cover;
+    border-radius: 50%;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* По-силна сянка при ховър */
+}
+
+.logoIcon-img:hover {
+    transform: scale(1.09);
+    /* Леко увеличение при hover */
+}
+
+
+.menu-container {
+    position: relative;
+    z-index: 6;
+    margin-bottom: 10px;
+    background-color: #121212;
+    width: 2.7em;
+    border-radius: 11em;
+    padding: 13px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9em;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.337);
+    opacity: 0; /* Начално невидим */
+    transform: translateY(34px); /* Начално място извън екрана */
+    animation: slideIn 0.4s forwards; /* Анимация със зададено време и поведение */
+}
+
+/* Дефиниция на keyframes анимацията */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(34px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-container img {
+    width: 1.98em;
+    height: 1.98em;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    /* Плавен преход */
+}
+
+.menu-container img:hover {
+    cursor: pointer;
+    transform: scale(1.09);
+    /* Леко увеличение при hover */
+}
+
+
