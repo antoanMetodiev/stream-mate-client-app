@@ -10,19 +10,12 @@ import { Movie } from "../../types/MovieType";
 import { Series } from "../../types/Series";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { User } from "../../types/User";
 import { Pagination } from "./Pagination/Pagination";
 import { Loader } from "../Loader/Loader";
 import { Footer } from "../Footer/Footer";
 import { BehindElement } from "./BehindElelement/BehindElement";
 
-interface CinemaRecordPageProps {
-    user: User | null;
-};
-
-export const CinemaRecordPage = ({
-    user,
-}: CinemaRecordPageProps) => {
+export const CinemaRecordPage = () => {
     const BASE_URL = window.location.href.includes("local") ? "http://localhost:8080" : "https://married-miquela-stream-mate-org-original-ce114be1.koyeb.app";
     let location = useLocation();
     const [cinemaRecordsList, setCinemaRecordsList] = useState<Movie[] | Series[] | undefined>(localStorage.getItem("LAST_CINEMA_RECORDS") ? JSON.parse(localStorage.getItem("LAST_CINEMA_RECORDS")!) : undefined);
@@ -149,6 +142,7 @@ export const CinemaRecordPage = ({
     }, [currentPaginationPage, allMoviesCount, location.pathname, genres]); // Добавен `allMoviesCount` като зависимост
 
     useEffect(() => {
+        debugger;
         if (cinemaRecordsList && cinemaRecordsList.length > 0) {
             setTimeout(() => {
                 window.scrollTo(0, 0);
@@ -157,6 +151,7 @@ export const CinemaRecordPage = ({
     }, [cinemaRecordsList, location.pathname]);
 
 
+    console.log(totalPages)
 
     return (
         <>
@@ -168,7 +163,6 @@ export const CinemaRecordPage = ({
 
             <article className={style['cinema-record-page-container']}>
                 <Header
-                    user={user}
                     genres={genres}
                     setGenres={setGenres}
                     setIsLoading={setIsLoading}
@@ -203,7 +197,6 @@ export const CinemaRecordPage = ({
                 ) : (
                     cinemaRecordsList && (
                         <CinemaRecordsList
-                            user={user}
                             genres={genres}
                             searchedMovieTitle={searchedMovieTitle}
                             allMoviesCount={allMoviesCount}

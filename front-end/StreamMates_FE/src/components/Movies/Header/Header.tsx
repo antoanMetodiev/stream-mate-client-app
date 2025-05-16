@@ -8,11 +8,9 @@ import { Movie } from "../../../types/MovieType";
 import { Series } from "../../../types/Series";
 
 import { Navigation } from "../../HomePage/WelcomeComponent/Navigation/Navigation";
-import { User } from "../../../types/User";
 import { useEffect, useRef } from "react";
 
 interface HeaderProps {
-    user: User | null;
     setCinemaRecordsList: React.Dispatch<React.SetStateAction<Movie[] | Series[] | undefined>>;
     setLastPathName: React.Dispatch<React.SetStateAction<string>>;
     setAllMoviesCount: React.Dispatch<React.SetStateAction<number>>;
@@ -27,7 +25,6 @@ interface HeaderProps {
 };
 
 export const Header = ({
-    user,
     genres,
     setCinemaRecordsList,
     setLastPathName,
@@ -78,8 +75,6 @@ export const Header = ({
 
             {showNavigationLinks && (
                 <Navigation
-                    user={user}
-                    setUser={() => { }}
                     setCinemaRecordsList={setCinemaRecordsList}
                     setGenres={setGenres}
                     setInputValue={setInputValue}

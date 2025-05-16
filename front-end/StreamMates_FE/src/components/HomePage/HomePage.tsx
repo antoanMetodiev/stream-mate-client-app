@@ -5,19 +5,13 @@ import { User } from "../../types/User";
 import { MovingCinemaRecords } from "./MovingCinemaRecords/MovingCinemaRecors";
 import { Footer } from "../Footer/Footer";
 
-interface HomePageProps {
-    user: User | null;
-    setUser: React.Dispatch<React.SetStateAction<User | null>>
-};
 
-export const HomePage = ({
-    user,
-    setUser,
-}: HomePageProps) => {
+
+export const HomePage = () => {
 
     return (
         <article className={style['home-page-container']}>
-            <WelcomeComponent user={user} setUser={setUser} />
+            <WelcomeComponent />
             <MovingCinemaRecords />
             <Footer />
         </article>

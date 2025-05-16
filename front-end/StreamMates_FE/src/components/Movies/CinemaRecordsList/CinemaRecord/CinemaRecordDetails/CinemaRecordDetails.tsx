@@ -32,6 +32,7 @@ export const CinemaRecordDetails = () => {
     const playerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        debugger;
         if (cinemaRecord) return;
 
         const data = location.pathname.split("/");
@@ -67,7 +68,6 @@ export const CinemaRecordDetails = () => {
                 cinemaRecord && (
                     <article className={style['cinema-record-details-container']}>
                         <Header
-                            user={null}
                             setCinemaRecordsList={() => { }}
                             genres={""}
                             inputValue={""}
@@ -108,10 +108,10 @@ export const CinemaRecordDetails = () => {
                             />
                         )}
 
-                        <CommentsSection
+                        {/* <CommentsSection
                             myData={myData}
                             currentCinemaRecordId={currentCinemaRecordId}
-                        />
+                        /> */}
 
                         <img
                             className={style['background-img']}

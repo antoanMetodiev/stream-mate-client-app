@@ -53,6 +53,7 @@ export const SearchEngine = ({
                 return;
             };
 
+            debugger;
             const getSearchedMoviesCount = async () => {
                 setIsLoading(true);
 
@@ -120,6 +121,7 @@ export const SearchEngine = ({
     };
 
     async function searchMovies(event: React.FormEvent<HTMLFormElement | HTMLImageElement>) {
+        debugger;
         event.preventDefault();
         const title = inputValue;
 
